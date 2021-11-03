@@ -1,18 +1,27 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diwali</title>
+    <link rel="stylesheet" href="{% static 'diwali/css/style.css' %}">
+    <title>दिवाली की हार्दिक शुभकामनाएँ</title>
 </head>
 <body>
-    <h1>Happy Diwali</h1>
-    <form action="{% url 'diwali_wish' %}" method="GET">
-        {% csrf_token %}
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" placeholder="Enter your name">
-        <button type="submit">Go</button>
-    </form>
+    <div class="container">
+        <h1 class="happy">HAPPY DIWALI</h1>
+        <div>
+            <img src="{% static 'diwali/images/happy-diwali.gif' %}" alt="diwali wish">
+        </div>
+        <p class="quote">आपको दिवाली की शुभकामनाएं। मुझे उम्मीद है कि यह दिवाली आपके लिए एक शानदार उत्सव हो और आपको हमेशा धन और सफलता मिले।</p>
+        <div>
+            <form action="{% url 'diwali_wish' %}" method="GET">
+                <input type="text" class="name_input" name="name" placeholder="यहाँ अपना नाम लिखें....">
+                <button class="btn" type="submit">देखें</button>
+            </form>
+            <p class="copyright">Copyright © 2021 Satyam Seth</p>
+        </div>
+    </div>
 </body>
 </html>

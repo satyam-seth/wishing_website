@@ -1,20 +1,36 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diwali Wish</title>
+    <link rel="stylesheet" href="{% static 'diwali/css/style.css' %}">
+    <title>दिवाली की हार्दिक शुभकामनाएँ</title>
 </head>
 <body>
-    {% if name %}
-        <h1>{{name|capfirst}} ki tarf se aap sbhi ko happy diwali</h1>
-    {% endif %}
-    <form action="{% url 'diwali_wish' %}" method="GET">
-        {% csrf_token %}
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" placeholder="Enter your name">
-        <button type="submit">Go</button>
-    </form>
+    <div class="container">
+        {% if name %}
+            <div><span class="happy">{{name|upper}}</span> 
+                <p class="wish">की तरफ से आपको और आपके परिवार को दिवाली की हार्दिक शुभकामनाएँ ।</p>
+            </div>
+        {% else %}
+            <h1 class="happy">HAPPY DIWALI</h1>
+        {% endif %}
+        <div>
+            <img src="{% static 'diwali/images/diwali-wish.gif' %}" alt="diwali wish">
+        </div>
+        <p class="quote">झिलमिलाते दीपों की रोशनी से प्रकाशित ये दीपावली आपके घर में सुख समृद्धि और आशीर्वाद ले कर आए शुभ दीपावली!</p>
+        <div>
+            <a class="share" href="Whatsapp://send?text={{name}} ने आपके लिए कुछ खास संदेश भेजा है http://127.0.0.1:8000/diwali/wish/?name={{name}}">
+                <p>यहाँ से सबको WhatsApp पर भेजें</p>
+            </a>
+            <form action="{% url 'diwali_wish' %}" method="GET">
+                <input type="text" class="name_input" name="name" placeholder="यहाँ अपना नाम लिखें....">
+                <button class="btn" type="submit">देखें</button>
+            </form>
+            <p class="copyright">Copyright © 2021 Satyam Seth</p>
+        </div>
+    </div>
 </body>
 </html>
