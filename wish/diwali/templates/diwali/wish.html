@@ -4,15 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diwali</title>
+    <title>Diwali Wish</title>
 </head>
 <body>
     {% if name %}
-        {{name}} ki tarf se aap sbhi ko happy diwali
-    {% else %}
-        Happy Diwali
+        <h1>{{name|capfirst}} ki tarf se aap sbhi ko happy diwali</h1>
     {% endif %}
-    <form action="" method="POST">
+    <form action="{% url 'diwali_wish' %}" method="GET">
         {% csrf_token %}
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" placeholder="Enter your name">
