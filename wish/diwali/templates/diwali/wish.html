@@ -11,7 +11,7 @@
 <body>
     <div class="container">
         {% if name %}
-            <div><span class="happy">{{name|upper}}</span> 
+            <div><span class="happy">{{name|upper}}</span>
                 <p class="wish">की तरफ से आपको और आपके परिवार को दिवाली की हार्दिक शुभकामनाएँ ।</p>
             </div>
         {% else %}
@@ -22,9 +22,11 @@
         </div>
         <p class="quote">झिलमिलाते दीपों की रोशनी से प्रकाशित ये दीपावली आपके घर में सुख समृद्धि और आशीर्वाद ले कर आए शुभ दीपावली!</p>
         <div>
-            <a class="share" href="Whatsapp://send?text={{name}} ने आपके लिए कुछ खास संदेश भेजा है http://127.0.0.1:8000/diwali/wish/?name={{name}}">
-                <p>यहाँ से सबको WhatsApp पर भेजें</p>
-            </a>
+            {% if name %}
+                <a class="share" href="{{share_url}}">
+                    <p>यहाँ से सबको WhatsApp पर भेजें</p>
+                </a>
+            {% endif %}
             <form action="{% url 'diwali_wish' %}" method="GET">
                 <input type="text" class="name_input" name="name" placeholder="यहाँ अपना नाम लिखें....">
                 <button class="btn" type="submit">देखें</button>
