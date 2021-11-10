@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{% static 'chhath/images/logo.png' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'chhath/css/style.css' %}">
+    <title>दिवाली की हार्दिक शुभकामनाएँ</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="happy">HAPPY CHHATH POOJA</h1>
+        <div>
+            <img src="{% static 'chhath/images/happy-chhath.gif' %}" alt="chhath wish">
+        </div>
+        <p class="quote">सात घोड़ों के रथ पर सवार, भगवान सूर्य आएं आपके द्वार, किरणों से भरे आपका घर संसार, छठ आपके लिए बन जाए समृद्धि का त्योहार, छठ पूजा की हार्दिक शुभकामनाएं।</p>
+        <div>
+            <form action="{% url 'chhath_wish' %}" method="GET">
+                <input type="text" class="name_input" name="name" placeholder="यहाँ अपना नाम लिखें....">
+                <button class="btn" type="submit">देखें</button>
+            </form>
+            <p class="copyright">Copyright © 2021 Satyam Seth</p>
+        </div>
+    </div>
+</body>
+</html>

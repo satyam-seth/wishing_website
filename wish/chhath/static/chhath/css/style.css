@@ -1,0 +1,163 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    animation: backcolor 5s linear infinite forwards;
+}
+
+@keyframes backcolor {
+    0% {
+        background-color: violet;
+    }    
+    25% {
+        background-color: chocolate;
+    }
+    50% {
+        background-color: palegreen;
+    }
+    75% {
+        background-color: blueviolet;
+    }
+    100% {
+        background-color: violet;
+    }
+}
+
+.container {
+    min-height: 100vh;
+    border: 20px double;
+    display: grid;
+    grid-template-rows:auto 1fr auto auto;
+    place-items: center;
+    padding: 1vmax;
+    animation: bcolor 5s linear infinite forwards;
+}
+
+@keyframes bcolor {
+    0% {
+        border-color: red;
+    }    
+    25% {
+        border-color: yellow;
+    }
+    50% {
+        border-color: green;
+    }
+    75% {
+        border-color: blue;
+    }
+    100% {
+        border-color: red;
+    }
+}
+
+.happy{
+    display: flex;
+    justify-content: center;
+    margin: 4vmax 0 2vmax 0;
+    color: red;
+    text-shadow: 2px 2px 4px #000000;
+    font-size: 5vmax;
+    text-align: justify;
+    animation: popup 1s ease-in-out infinite forwards;
+}
+
+@keyframes popup {
+    0% {
+        transform: rotate(0deg);
+    }
+    33% {
+        transform: rotate(-10deg);
+    }
+    66% {
+        transform: rotate(10deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.wish{
+    font-size: 3vmax;
+    color: pink;
+    text-shadow: 2px 2px 4px #000000;
+    margin: 1vh 0 1vh 0;
+    animation: wish 2s ease-in-out infinite;
+}
+
+@keyframes wish {
+    0% {
+        transform: scaleX(1)
+    }
+    50% {
+        transform: scaleX(0.95)
+    }
+    100% {
+        transform: scaleX(1)
+    }
+}
+
+.container div{
+    position: relative;
+    margin-top: 1vmax;
+}
+
+.container div img{
+    width: 100%;
+    animation: wish 2s ease-in-out 1s infinite;
+
+}
+
+.share{
+    display: flex;
+    text-decoration: none;
+    color: white;
+    border: 0.5vmax solid greenyellow;
+    background-color: green;
+    border-radius: 2vmax;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2vmax;
+    padding: 1vh 0 1vh 0;
+    animation: wish 2s ease-in-out 1s infinite;
+    text-align: justify;
+}
+
+.quote {
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+    font-size: 2.5vmax;
+    text-align: justify;
+    animation: wish 2s ease-in-out infinite;
+}
+
+.name_input{
+    margin: 2vh 1vh 2vh 0;
+    height: 8vh;
+    width: 60vw;
+    background-color: yellow;
+    border: 0.5vh solid red;
+    border-radius: 2vmax;
+    color: green;
+    font-size: 3vh;
+    animation: wish 2s ease-in-out infinite;
+}
+
+.btn{
+    margin: 2vh 0 2vh 1vh;
+    height: 8vh;
+    width: 20vw;
+    background-color: green;
+    border: 0.5vh solid blue;
+    border-radius: 2vmax;
+    color: yellow;
+    font-size: 3vh;
+    animation: wish 2s ease-in-out infinite;
+}
+
+.copyright{
+    text-align: center;
+}

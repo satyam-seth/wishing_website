@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{% static 'chhath/images/logo.png' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'chhath/css/style.css' %}">
+    <title>छठ पूजा की हार्दिक शुभकामनाएँ</title>
+</head>
+<body>
+    <div class="container">
+        {% if name %}
+            <div><span class="happy">{{name|upper}}</span>
+                <p class="wish">की तरफ से आपको और आपके परिवार को छठ पूजा की हार्दिक शुभकामनाएँ ।</p>
+            </div>
+        {% else %}
+            <h1 class="happy">HAPPY CHHATH POOJA</h1>
+        {% endif %}
+        <div>
+            <img src="{% static 'chhath/images/chhath-wish.gif' %}" alt="chhath wish">
+        </div>
+        <p class="quote">आया है भगवान सूर्य का रथ, आज है मन भावन सुनहरी छठ, मिले आपको सुख-संपत्ति अपार, छठ की शुभकामनाएं करें स्वीकार !</p>
+        <div>
+            {% if name %}
+                <a class="share" href="{{share_url}}">
+                    <p>यहाँ से सबको WhatsApp पर भेजें</p>
+                </a>
+            {% endif %}
+            <form action="{% url 'chhath_wish' %}" method="GET">
+                <input type="text" class="name_input" name="name" placeholder="यहाँ अपना नाम लिखें....">
+                <button class="btn" type="submit">देखें</button>
+            </form>
+            <p class="copyright">Copyright © 2021 Satyam Seth</p>
+        </div>
+    </div>
+</body>
+</html>
